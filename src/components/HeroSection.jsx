@@ -77,7 +77,7 @@ export default function HeroSection() {
                 />
             </div>
 
-            {/* Dark overlay so text stays readable */}
+            {/* Dark overlay so text stays readable — pass-through for mouse */}
             <div style={{
                 position: 'absolute',
                 inset: 0,
@@ -128,6 +128,7 @@ export default function HeroSection() {
                     zIndex: 3,
                     width: '100%',
                     maxWidth: 1200,
+                    pointerEvents: 'none',
                     margin: '0 auto',
                     padding: '120px 24px 80px',
                 }}
@@ -178,7 +179,7 @@ export default function HeroSection() {
                     </motion.p>
 
                     {/* CTA Buttons */}
-                    <motion.div variants={fadeUp} style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginBottom: 32 }}>
+                    <motion.div variants={fadeUp} style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginBottom: 32, pointerEvents: 'auto' }}>
                         <a href="#cta" className="btn-primary" style={{ fontSize: 15, padding: '14px 32px' }}>
                             Start as Client <ArrowRight size={15} />
                         </a>
@@ -188,7 +189,7 @@ export default function HeroSection() {
                     </motion.div>
 
                     {/* Stat pills */}
-                    <motion.div variants={fadeUp} style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+                    <motion.div variants={fadeUp} style={{ display: 'flex', gap: 10, flexWrap: 'wrap', pointerEvents: 'auto' }}>
                         {[
                             { icon: <DollarSign size={11} />, label: '$0.001 escrow fee' },
                             { icon: <Clock size={11} />, label: 'Instant settlement' },
